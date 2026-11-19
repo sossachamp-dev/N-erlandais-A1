@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Néerlandais débutant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7fb;--surface:#fff;--ink:#14284b;--muted:#5b6b88;--line:#d5deec;--accent:#e8590c;--accent-ink:#fff;--tile:#1f4e9c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0e1626;--surface:#16233b;--ink:#e7edf8;--muted:#9fb0cc;--line:#2a3b5c;--accent:#ff8a3d;--accent-ink:#1a0d03;--tile:#7fa8ee}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0e1626;--surface:#16233b;--ink:#e7edf8;--muted:#9fb0cc;--line:#2a3b5c;--accent:#ff8a3d;--accent-ink:#1a0d03;--tile:#7fa8ee}
+html{scroll-padding-top:64px;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55}
+header{padding:40px 20px 24px;max-width:720px;margin:0 auto}
+h1{font-size:clamp(2rem,7vw,3rem);line-height:1.05;margin:0 0 12px;font-weight:800;letter-spacing:-.02em}
+header p{margin:0;color:var(--muted);max-width:52ch}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 20px;display:flex;gap:8px;overflow-x:auto}
+nav a{flex:none;color:var(--ink);text-decoration:none;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:.9rem;background:var(--surface)}
+nav a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+main{max-width:720px;margin:0 auto;padding:8px 20px 64px}
+section{margin-top:40px}
+h2{font-size:1.6rem;margin:0 0 4px;font-weight:800;letter-spacing:-.01em;color:var(--tile)}
+.goal{margin:0 0 16px;color:var(--muted)}
+.note{background:var(--surface);border-left:4px solid var(--tile);padding:12px 16px;border-radius:0 8px 8px 0;margin:0 0 16px;font-size:.95rem}
+.row{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.nl{font-weight:600;font-size:1.1rem}
+.fr{color:var(--muted);font-size:.92rem}
+.say{display:block;font-size:.85rem;color:var(--tile)}
+.btns{display:flex;gap:6px}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);min-height:40px;padding:0 12px}
+button.play{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600;min-width:44px}
+button[aria-pressed="true"]{outline:2px solid var(--accent)}
+#voice{margin-top:16px;font-size:.88rem;color:var(--muted)}
+.tips{margin:0;padding-left:1.2em}
+.tips li{margin-bottom:6px}
+.table{width:100%;border-collapse:collapse;font-size:.95rem;background:var(--surface);border-radius:10px;overflow:hidden}
+.table th,.table td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line)}
+.scroll{overflow-x:auto}
+footer{max-width:720px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+<h1>Néerlandais<br>pour débutants</h1>
+<p>Dix leçons pour construire les bases : prononciation, politesse, nombres, verbes, articles, questions, négation, passé et vie quotidienne. Touche ▶ pour écouter, « Lent » pour décomposer.</p>
+<p id="voice" role="status"></p>
+</header>
+<nav aria-label="Leçons">
+<a href="#l1">1 Sons</a><a href="#l2">2 Saluer</a><a href="#l3">3 Nombres</a><a href="#l4">4 Verbes</a><a href="#l5">5 Au café</a><a href="#l6">6 Articles</a><a href="#l7">7 Questions</a><a href="#l8">8 Négation</a><a href="#l9">9 Passé et futur</a><a href="#l10">10 Au quotidien</a>
+</nav>
+<main>
+
+<section id="l1">
+<h2>Leçon 1 : les sons</h2>
+<p class="goal">Objectif : reconnaître et produire les sons qui n’existent pas en français.</p>
+<div class="note">Le néerlandais se lit comme il s’écrit, avec peu d’exceptions. Les voyelles doublées (<b>aa, ee, oo, uu</b>) sont longues ; la voyelle simple en syllabe fermée est courte.</div>
+<div id="sounds"></div>
+<div class="note">La répétition fait tout : écoute, répète à voix haute, réécoute. Cherche aussi ces mots sur Forvo.com pour entendre des locuteurs natifs, car la voix de synthèse reste approximative.</div>
+</section>
+
+<section id="l2">
+<h2>Leçon 2 : saluer et se présenter</h2>
+<p class="goal">Objectif : lancer une conversation de base.</p>
+<div id="greet"></div>
+<div class="note">Deux façons de dire « tu » : <b>jij / je</b> (informel) et <b>u</b> (formel, avec un inconnu ou un client).</div>
+</section>
+
+<section id="l3">
+<h2>Leçon 3 : nombres et jours</h2>
+<p class="goal">Objectif : compter jusqu’à 20 et nommer les jours.</p>
+<div id="nums"></div>
+<h2 style="font-size:1.2rem;margin-top:24px">Les jours</h2>
+<div id="days"></div>
+</section>
+
+<section id="l4">
+<h2>Leçon 4 : verbes essentiels et ordre des mots</h2>
+<p class="goal">Objectif : construire des phrases simples au présent.</p>
+<div class="scroll"><table class="table">
+<tr><th></th><th>zijn (être)</th><th>hebben (avoir)</th></tr>
+<tr><td>ik</td><td>ben</td><td>heb</td></tr>
+<tr><td>jij</td><td>bent</td><td>hebt</td></tr>
+<tr><td>hij / zij</td><td>is</td><td>heeft</td></tr>
+<tr><td>wij</td><td>zijn</td><td>hebben</td></tr>
+<tr><td>jullie</td><td>zijn</td><td>hebben</td></tr>
+<tr><td>zij (ils)</td><td>zijn</td><td>hebben</td></tr>
+</table></div>
+<div class="note" style="margin-top:16px">Règle d’or : le verbe conjugué occupe toujours la <b>2<sup>e</sup> place</b>. Si tu commences par autre chose que le sujet, le sujet passe après le verbe : <i>Vandaag ga ik naar huis</i> (Aujourd’hui, je rentre).</div>
+<div id="verbs"></div>
+</section>
+
+<section id="l5">
+<h2>Leçon 5 : au café</h2>
+<p class="goal">Objectif : suivre et jouer un petit dialogue complet.</p>
+<div id="cafe"></div>
+<div class="note">Exercice : lis chaque réplique à voix haute avant d’écouter, puis compare. Rejoue ensuite le dialogue en changeant la boisson (<i>thee, water, een cola</i>).</div>
+</section>
+
+<section id="l6"><h2>Leçon 6 : articles et pluriel</h2><p class="goal">Objectif : choisir <i>de</i> ou <i>het</i> et former le pluriel.</p><div class="note">Deux articles définis : <b>de</b> (la majorité des noms) et <b>het</b> (les noms « neutres »). Apprends l’article avec chaque nom. Indéfini : toujours <b>een</b>. Pluriel : le plus souvent <b>-en</b> (<i>boek → boeken</i>) ou <b>-s</b> (<i>auto → auto’s</i>), avec <b>de</b> devant.</div><div id="art"></div></section>
+<section id="l7"><h2>Leçon 7 : poser des questions</h2><p class="goal">Objectif : demander qui, quoi, où, quand, comment.</p><div class="note">Question fermée : le verbe passe devant le sujet (<i>Heb je tijd?</i>). Question ouverte : mot interrogatif, puis verbe, puis sujet (<i>Waar woon je?</i>).</div><div id="quest"></div></section>
+<section id="l8"><h2>Leçon 8 : négation et verbes modaux</h2><p class="goal">Objectif : dire non, devoir, pouvoir, vouloir.</p><div class="note"><b>niet</b> nie un verbe ou un adjectif ; <b>geen</b> nie un nom (<i>Ik heb geen tijd</i>). Avec un modal (<i>moeten, kunnen, willen, mogen</i>), l’infinitif part en fin de phrase.</div><div id="neg"></div></section>
+<section id="l9"><h2>Leçon 9 : passé et futur</h2><p class="goal">Objectif : parler d’hier et de demain.</p><div class="note">Passé composé : <b>hebben</b> ou <b>zijn</b> en 2<sup>e</sup> place, participe passé en fin de phrase, en général <b>ge- + radical + t/d</b> (<i>werken → gewerkt</i>). Les verbes de déplacement prennent <i>zijn</i>. Passé simple de zijn : <i>was / waren</i>. Futur : <b>gaan + infinitif</b>.</div><div id="past"></div></section>
+<section id="l10"><h2>Leçon 10 : au quotidien</h2><p class="goal">Objectif : se débrouiller en ville, au magasin, au restaurant.</p><div id="daily"></div></section>
+</main>
+
+<script>
+var D = {
+sounds:[
+["goed","bon","g = « r » rauque, soufflé du fond de la gorge ; oe = « ou »"],
+["lachen","rire","ch comme g, jamais comme « ch » français"],
+["huis","maison","ui : lèvres en « o », dire « é » (≈ « heu-ïs »)"],
+["deur","porte","eu = « eu » de « peu »"],
+["tijd","temps","ij = « èï », comme dans « paye » appuyé"],
+["trein","train","ei = même son que ij"],
+["boek","livre","oe = « ou »"],
+["auto","voiture","au = « aou »"],
+["oud","vieux","ou = « aou », comme au"],
+["maan","lune","aa long, comme « â » tenu"],
+["zee","mer","ee long, proche de « é » sans glisser vers « i »"],
+["school","école","sch = « s » + « ch » rauque"],
+["water","eau","w entre « v » et « ou », lèvres peu arrondies"],
+["jij","toi","j = « y » de « yaourt »"]
+],
+greet:[
+["Hallo!","Bonjour ! / Salut !",""],
+["Goedemorgen.","Bonjour (matin).",""],
+["Goedemiddag.","Bonjour (après-midi).",""],
+["Goedenavond.","Bonsoir.",""],
+["Hoe gaat het?","Comment ça va ?",""],
+["Goed, en met jou?","Bien, et toi ?",""],
+["Ik heet …","Je m’appelle …",""],
+["Hoe heet je?","Comment tu t’appelles ?",""],
+["Aangenaam.","Enchanté.",""],
+["Ik kom uit Frankrijk.","Je viens de France.",""],
+["Ik spreek Frans en Engels.","Je parle français et anglais.",""],
+["Ik leer Nederlands.","J’apprends le néerlandais.",""],
+["Sorry, ik begrijp het niet.","Désolé, je ne comprends pas.",""],
+["Kun je dat herhalen?","Peux-tu répéter ?",""],
+["Tot ziens!","Au revoir !",""],
+["Doei!","Salut ! (à bientôt)",""]
+],
+nums:[["een","1"],["twee","2"],["drie","3"],["vier","4"],["vijf","5"],["zes","6"],["zeven","7"],["acht","8"],["negen","9"],["tien","10"],["elf","11"],["twaalf","12"],["dertien","13"],["veertien","14"],["vijftien","15"],["zestien","16"],["zeventien","17"],["achttien","18"],["negentien","19"],["twintig","20"]],
+days:[["maandag","lundi"],["dinsdag","mardi"],["woensdag","mercredi"],["donderdag","jeudi"],["vrijdag","vendredi"],["zaterdag","samedi"],["zondag","dimanche"]],
+verbs:[
+["Ik ben moe.","Je suis fatigué."],
+["Jij bent laat.","Tu es en retard."],
+["Zij is thuis.","Elle est à la maison."],
+["Wij zijn klaar.","Nous sommes prêts."],
+["Ik heb honger.","J’ai faim."],
+["Heb je tijd?","As-tu le temps ?"],
+["Hij heeft een boek.","Il a un livre."],
+["Ik wil koffie.","Je veux du café."],
+["Ik kan morgen komen.","Je peux venir demain."],
+["Ik ga naar huis.","Je rentre à la maison."],
+["Vandaag ga ik naar de markt.","Aujourd’hui, je vais au marché."]
+],
+cafe:[
+["Goedemiddag!","Bonjour !"],
+["Een koffie, alsjeblieft.","Un café, s’il vous plaît."],
+["Met melk?","Avec du lait ?"],
+["Nee, zonder melk.","Non, sans lait."],
+["Dat is drie euro vijftig.","Ça fait trois euros cinquante."],
+["Alsjeblieft.","Voilà."],
+["Dank je wel!","Merci beaucoup !"],
+["Graag gedaan.","Avec plaisir."]
+],
+art:[["de man","l’homme"],["de vrouw","la femme"],["het huis","la maison"],["het boek","le livre"],["de boeken","les livres"],["een kat, twee katten","un chat, deux chats"],["de auto’s","les voitures"],["het kind, de kinderen","l’enfant, les enfants"]],
+quest:[["Wie ben jij?","Qui es-tu ?"],["Wat is dit?","Qu’est-ce que c’est ?"],["Waar woon je?","Où habites-tu ?"],["Wanneer kom je?","Quand viens-tu ?"],["Hoe laat is het?","Quelle heure est-il ?"],["Waarom leer je Nederlands?","Pourquoi apprends-tu le néerlandais ?"],["Hoeveel kost dit?","Combien ça coûte ?"],["Spreekt u Engels?","Parlez-vous anglais ?"]],
+neg:[["Ik ben niet moe.","Je ne suis pas fatigué."],["Ik heb geen tijd.","Je n’ai pas le temps."],["Ik wil niet gaan.","Je ne veux pas y aller."],["Ik moet werken.","Je dois travailler."],["Ik kan niet komen.","Je ne peux pas venir."],["Mag ik hier zitten?","Puis-je m’asseoir ici ?"],["Ik wil Nederlands leren.","Je veux apprendre le néerlandais."]],
+past:[["Ik heb gisteren gewerkt.","J’ai travaillé hier."],["Wij hebben gegeten.","Nous avons mangé."],["Ik heb koffie gedronken.","J’ai bu du café."],["Zij is naar huis gegaan.","Elle est rentrée à la maison."],["Ik was moe.","J’étais fatigué."],["Wij waren thuis.","Nous étions à la maison."],["Morgen ga ik werken.","Demain, je vais travailler."],["Ik ga je bellen.","Je vais t’appeler."]],
+daily:[["Waar is het station?","Où est la gare ?"],["Ga rechtdoor en dan links.","Allez tout droit puis à gauche."],["Het is rechts.","C’est à droite."],["Ik zoek een supermarkt.","Je cherche un supermarché."],["Mag ik de rekening?","Puis-je avoir l’addition ?"],["Kan ik met de kaart betalen?","Puis-je payer par carte ?"],["Ik heb een afspraak om twee uur.","J’ai rendez-vous à deux heures."],["Tot morgen!","À demain !"],["Fijne dag nog!","Bonne journée !"]]};
+
+var voice=null, synth=window.speechSynthesis;
+function pick(){
+  if(!synth){return}
+  var v=synth.getVoices().filter(function(x){return /^nl/i.test(x.lang)});
+  voice=v.find(function(x){return /nl[-_]NL/i.test(x.lang)})||v[0]||null;
+  var s=document.getElementById("voice");
+  s.textContent=voice?"Voix néerlandaise détectée : "+voice.name+".":"Aucune voix néerlandaise trouvée sur cet appareil. Ajoute-la dans les réglages de synthèse vocale de ton téléphone ou ordinateur.";
+}
+function say(t,rate){
+  if(!synth){return}
+  try{
+    synth.cancel();
+    var u=new SpeechSynthesisUtterance(t.replace(/…/g,""));
+    u.lang="nl-NL"; if(voice){u.voice=voice}
+    u.rate=rate; synth.speak(u);
+  }catch(e){}
+}
+function row(nl,fr,tip){
+  var r=document.createElement("div");r.className="row";
+  var l=document.createElement("div");
+  var a=document.createElement("div");a.className="nl";a.textContent=nl;
+  var b=document.createElement("div");b.className="fr";b.textContent=fr;
+  l.appendChild(a);l.appendChild(b);
+  if(tip){var c=document.createElement("span");c.className="say";c.textContent=tip;l.appendChild(c)}
+  var g=document.createElement("div");g.className="btns";
+  var p=document.createElement("button");p.className="play";p.textContent="▶";p.setAttribute("aria-label","Écouter : "+nl);
+  p.onclick=function(){say(nl,0.9)};
+  var s=document.createElement("button");s.textContent="Lent";s.setAttribute("aria-label","Écouter lentement : "+nl);
+  s.onclick=function(){say(nl,0.5)};
+  g.appendChild(p);g.appendChild(s);r.appendChild(l);r.appendChild(g);
+  return r;
+}
+function fill(id,list,tipIdx){
+  var h=document.getElementById(id);
+  list.forEach(function(x){h.appendChild(row(x[0],x[1],x[2]))});
+}
+fill("sounds",D.sounds);fill("greet",D.greet);fill("nums",D.nums);fill("days",D.days);fill("verbs",D.verbs);fill("cafe",D.cafe);fill("art",D.art);fill("quest",D.quest);fill("neg",D.neg);fill("past",D.past);fill("daily",D.daily);
+pick();
+if(synth){synth.onvoiceschanged=pick}else{document.getElementById("voice").textContent="La lecture audio n’est pas disponible dans ce navigateur."}
+</script>
+</body>
+</html>
